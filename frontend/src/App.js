@@ -9,6 +9,8 @@ const EmotionToImage = () => {
   const [aiImage, setAiImage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  console.log(process.env.REACT_APP_API_URL)
+
   // Start webcam
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({ video: true })
@@ -55,7 +57,7 @@ const EmotionToImage = () => {
       formData.append("image", blob, "frame.jpg");
 
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/detect_emotion`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/detect_emotion`, {
           method: "POST",
           body: formData,
         });
