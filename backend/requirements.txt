@@ -1,0 +1,8 @@
+flask
+flask-cors
+opencv-python
+deepface
+requests
+tf-keras
+huggingface_hub 
+Pillow
