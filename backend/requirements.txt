@@ -4,5 +4,7 @@ opencv-python
 deepface
 requests
 tf-keras
-huggingface_hub 
+huggingface_hub
 Pillow
+python-dotenv
+gunicorn
