@@ -11,7 +11,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+# ✅ Allow requests only from your frontend
+CORS(app, resources={r"/*": {"origins": [
+    os.getenv("LOCAL_FRONTEND_URL"),     # for CRA
+    os.getenv("PRODUCTION_FRONTEND_URL")  # production domain (optional)
+]}})
+
 
 # ✅ HuggingFace Inference Client
 client = InferenceClient(
