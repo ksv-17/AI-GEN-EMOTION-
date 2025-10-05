@@ -1,6 +1,9 @@
 import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  # Suppress TensorFlow logs
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Reduce memory footprint
 from deepface import DeepFace
 from huggingface_hub import InferenceClient
 from io import BytesIO
